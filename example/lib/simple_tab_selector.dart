@@ -49,19 +49,19 @@ class _SimpleTabSelectorState extends State<SimpleTabSelector> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.collections),
-            label: 'Red',
+            title: Text('Red'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.collections),
-            label: 'Green',
+            title: Text('Green'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.collections),
-            label: 'Megenta',
+            title: Text('Megenta'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.collections),
-            label: 'Grey',
+            title: Text('Grey'),
           ),
         ],
         currentIndex: index,
