@@ -42,4 +42,4 @@ class _StackPageState extends State<StackPage> {
   }
 }
 
-final defaultTransition = slideTransition;
+final defaultTransition = materialTabTransition;
