@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 final RouteTransitionsBuilder materialTabTransition = (
   BuildContext context,
-  Animation<double> animation,
-  Animation<double> secondaryAnimation,
-  Widget child,
+  Animation<double>? animation,
+  Animation<double>? secondaryAnimation,
+  Widget? child,
 ) {
   Widget appear = FadeTransition(
-    opacity: animation.drive(
+    opacity: animation!.drive(
       Tween<double>(
         begin: 0.0,
         end: 1.0,
@@ -25,7 +25,7 @@ final RouteTransitionsBuilder materialTabTransition = (
   );
 
   Widget disappear = FadeTransition(
-    opacity: secondaryAnimation.drive(
+    opacity: secondaryAnimation!.drive(
       Tween<double>(
         begin: 1.0,
         end: 0.0,

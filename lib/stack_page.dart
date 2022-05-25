@@ -4,12 +4,12 @@ import 'package:animated_indexed_stack/route_transitions.dart';
 class StackPage extends StatefulWidget {
   @required
   final Widget child;
-  final RouteTransitionsBuilder transitionsBuilder;
-  final Animation animation;
-  final Animation animationSecondary;
+  final RouteTransitionsBuilder? transitionsBuilder;
+  final Animation? animation;
+  final Animation? animationSecondary;
   const StackPage({
-    Key key,
-    this.child,
+    Key? key,
+    required this.child,
     this.transitionsBuilder,
     this.animation,
     this.animationSecondary,
@@ -32,11 +32,13 @@ class _StackPageState extends State<StackPage> {
 
   @override
   Widget build(BuildContext context) {
-    final transitionsBuilder = widget.transitionsBuilder ?? defaultTransition;
+    final transitionsBuilder = widget.transitionsBuilder as Widget Function(
+            BuildContext, Animation<double>?, Animation<double>?, Widget)? ??
+        defaultTransition;
     return transitionsBuilder(
       context,
-      widget.animation,
-      widget.animationSecondary,
+      widget.animation as Animation<double>,
+      widget.animationSecondary as Animation<double>,
       widget.child,
     );
   }
